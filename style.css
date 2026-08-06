@@ -1,0 +1,274 @@
+:root {
+  /* Palette mirrors limon's app theme (constants/theme.ts). Olive is reserved
+     for the wordmark; everything else is monochrome. */
+  --color-brand: #5c6733;
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-border: #e6e6e6;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-text-muted: #a0a0a0;
+  --color-highlight: #fff3bf;
+
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-family-brand: "Pacifico", var(--font-family);
+  --font-size-h1: clamp(1.75rem, 4vw, 2.25rem);
+  --font-size-h2: clamp(1.25rem, 3vw, 1.5rem);
+  --font-size-h3: 1.125rem;
+  --font-size-body-lg: 1.0625rem;
+  --font-size-body: 0.9375rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-label: 0.6875rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
+  --radius-full: 9999px;
+
+  --measure: 46rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-lg);
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ---------------------------------------------------------------- header --- */
+
+.site-header {
+  padding: var(--space-10) 0 var(--space-6);
+}
+
+.wordmark {
+  display: inline-block;
+  font-family: var(--font-family-brand);
+  font-size: 2.25rem;
+  line-height: 1.4;
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  font-size: var(--font-size-body);
+}
+
+.site-nav a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ text --- */
+
+main {
+  padding-bottom: var(--space-16);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  margin: 0 0 var(--space-2);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  margin: var(--space-10) 0 var(--space-4);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--space-4);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:focus-visible,
+.site-nav a:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+.updated {
+  display: block;
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.lead {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-secondary);
+}
+
+/* Placeholder that must be replaced before publishing. Deliberately loud. */
+.fill {
+  background: var(--color-highlight);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------- cards --- */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+.summary {
+  font-size: var(--font-size-body);
+}
+
+/* ----------------------------------------------------------------- table --- */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-body);
+  margin-bottom: var(--space-6);
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ------------------------------------------------------------------ home --- */
+
+.hero {
+  padding: var(--space-6) 0 var(--space-10);
+}
+
+.link-list {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.link-list a {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.15s ease;
+}
+
+.link-list a:hover {
+  border-color: var(--color-text-muted);
+}
+
+.link-list span {
+  display: block;
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-6) 0 var(--space-10);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding-top: var(--space-8);
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: var(--space-2);
+  }
+}
